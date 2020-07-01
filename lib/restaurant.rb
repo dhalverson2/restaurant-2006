@@ -27,5 +27,15 @@ class Restaurant
     end
   end
 
+#trying to get this to work using strftime, going to have to play around with it later
+  def announce_closing_time(hours)
+    result = closing_time(hours)
+    strftime("%I:%M%P")
+    if closing_time(hours).to_i < 12
+      "#{name} will be closing at #{result}AM"
+    else
+      "#{name} will be closing at #{result}PM"
+    end
+  end
 
 end
